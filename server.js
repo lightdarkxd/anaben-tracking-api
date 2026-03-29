@@ -17,7 +17,7 @@ app.use(express.static(__dirname));
 const PORT = process.env.PORT || 3001;
 
 // ── MIDDLEWARE ────────────────────────────────────────────────────────────────
-app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors({ origin: ['http://localhost:3000', 'https://anabensolutions.com', 'https://www.anabensolutions.com'] }));
 app.use(express.json({ limit: '10mb' }));
 app.use(morgan('combined'));

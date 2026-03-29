@@ -603,6 +603,10 @@ app.post('/v1/quotes/calculate', authMiddleware, (req, res) => {
   });
 });
 
+app.use(express.static('.'));
+
+app.use(express.static('.'));
+
 // ── 404 handler ───────────────────────────────────────────────────────────────
 app.use((req, res) => {
   res.status(404).json({ error: `Route ${req.method} ${req.path} not found` });

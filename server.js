@@ -294,6 +294,10 @@ function adminMiddleware(req, res, next) {
 // ROUTES
 // ─────────────────────────────────────────────────────────────────────────────
 
+// Serve tracking page
+app.get('/track', (req, res) => res.sendFile(__dirname + '/track.html'));
+app.get('/', (req, res) => res.sendFile(__dirname + '/track.html'));
+
 // ── Health check ─────────────────────────────────────────────────────────────
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'Anaben Solutions Tracking API', timestamp: new Date().toISOString() });

@@ -13,6 +13,7 @@ const rateLimit= require('express-rate-limit');
 const crypto   = require('crypto');
 
 const app  = express();
+app.use(express.static(__dirname));
 const PORT = process.env.PORT || 3001;
 
 // ── MIDDLEWARE ────────────────────────────────────────────────────────────────
@@ -603,9 +604,7 @@ app.post('/v1/quotes/calculate', authMiddleware, (req, res) => {
   });
 });
 
-app.use(express.static('.'));
 
-app.use(express.static('.'));
 
 // ── 404 handler ───────────────────────────────────────────────────────────────
 app.use((req, res) => {
